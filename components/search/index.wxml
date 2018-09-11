@@ -1,0 +1,7 @@
+<!--components/search/index.wxml-->
+<view class="search" bind:tap="onSearch">
+  <view class="searchBar">
+    <image src="/images/search.png" />
+    <text>搜索书籍</text>
+  </view>
+</view>

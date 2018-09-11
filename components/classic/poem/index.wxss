@@ -1,0 +1,2 @@
+/* components/classic/poem/index.wxss */
+@import "../classic.wxss";

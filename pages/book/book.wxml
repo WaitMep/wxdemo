@@ -1,0 +1,14 @@
+<!--pages/book/book.wxml-->
+<view class="bookList">
+  <view class="fixBox">
+    <search-cmp />
+  </view>
+  <view class="booksWrap">
+    <image src='/images/select.png' />
+    <view class="booksItem">
+      <block wx:key="" wx:for="{{books}}" wx:for-item="item">
+        <book-cmp book="{{item}}" />
+      </block>
+    </view>
+  </view>
+</view>

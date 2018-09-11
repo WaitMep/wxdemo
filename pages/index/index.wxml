@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+<!-- <movieAndMusic>
+</movieAndMusic>  -->
+<view class="container">
+  <view class="header">
+    <episode-cmp index="{{classic.index}}" />
+    <love-cmp bind:like="onLike" count="{{classic.fav_nums}}" love="{{classic.like_status}}" />
+  </view>
+  <!-- 期刊组件 -->
+  <movie-cmp wx:if="{{classic.type===100}}" 
+  image="{{classic.image}}" content="{{classic.content}}" />
+
+  <music-cmp wx:if="{{classic.type===200}}"
+  image="{{classic.image}}" content="{{classic.content}}" 
+  src="{{classic.url}}" />
+
+  <poem-cmp wx:if="{{classic.type===300}}"
+  image="{{classic.image}}" content="{{classic.content}}" />
+
+  <button-cmp bind:change="onChange" title="{{classic.title}}" />
+</view>

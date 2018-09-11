@@ -1,0 +1,112 @@
+/* pages/favour/favour.wxss */
+
+.mb {
+  margin-bottom: 30rpx;
+}
+
+.header {
+  width: 750rpx;
+  height: 672rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.header > image {
+  width: 750rpx;
+  height: 672rpx;
+}
+
+/* avatar */
+
+.avatar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  margin-top: -40rpx;
+  margin-left: -60rpx;
+  text-align: center;
+}
+
+.avatar image {
+  width: 121rpx;
+  height: 121rpx;
+  border-radius: 50%;
+  background: #000;
+}
+
+.avatar text {
+  font-size: 34rpx;
+  line-height: 1em;
+  margin-top: 14rpx;
+}
+
+/* aboutAndLove */
+
+.aboutAndLove {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 148rpx;
+  margin-top: -124rpx;
+  text-align: center;
+  background: #fff;
+  z-index: 2;
+}
+
+.aboutAndLove image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.love {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutAndLove text {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  margin-bottom: 29rpx;
+}
+
+.loveCount {
+  font-size: 36rpx;
+  color: #000;
+  margin: 0;
+  line-height: 1em;
+}
+
+/* loveItems */
+
+.loveItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.loveItems > image {
+  width: 65rpx;
+  height: 32rpx;
+  padding: 54rpx 0 18rpx 0;
+}
+
+.itemWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 30rpx;
+}
+
+.itemWrap > loveItem-cmp:nth-child(2n+1) {
+  margin-right: 30rpx;
+}

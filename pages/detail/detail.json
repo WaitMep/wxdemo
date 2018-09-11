@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tag-cmp": "/components/tag/index",
+    "love-cmp": "/components/love/index"
+  }
+}

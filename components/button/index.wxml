@@ -1,0 +1,6 @@
+<!--components/button/index.wxml-->
+<view class="container">
+  <image src="/images/pre.png" class="pre" bind:tap="onNext" />
+  <text>{{title}}</text>
+  <image src="/images/next.png" class="next" bind:tap="onPrevious" />
+</view>

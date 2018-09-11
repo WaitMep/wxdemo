@@ -1,0 +1,188 @@
+/* pages/detail/detail.wxss */
+
+.container {
+  background: #f5f5f5;
+  font-size: 28rpx;
+}
+
+.ml {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.discription {
+  margin: 30rpx 0;
+  font-size: 30rpx;
+}
+
+.bookMes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  text-align: center;
+}
+
+.bookMes image {
+  margin-top: 40rpx;
+  width: 204rpx;
+  height: 305rpx;
+}
+
+.bookMes .title {
+  font-size: 38rpx;
+  line-height: 1.5em;
+  /* margin-bottom: 17rpx; */
+}
+
+.bookMes .author {
+  /* line-height: 28rpx; */
+  margin-bottom: 41rpx;
+}
+
+/* brief */
+
+.brief {
+  background: #fff;
+  margin: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 30rpx;
+}
+
+.comment > .tag:nth-child(1){
+  background: #ffaddd;
+}
+
+.comment > .tag:nth-child(2){
+  background: #eefaff;
+}
+
+/* abstract */
+
+.abstract {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.content {
+  line-height: 2em;
+  margin-bottom: 30rpx;
+  text-indent: 58rpx;
+}
+
+/* bookInfo */
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  align-items: center;
+}
+.bookDetail {
+  padding-bottom: 88rpx;
+  width: 100%;
+  display: flex;
+  margin-bottom: 30rpx;
+  flex-direction: column;
+}
+.bookDetail > view {
+  color: #999;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+.bookDetail text {
+  color: #666;
+  margin-left: 20rpx;
+}
+
+/* 底部短评栏 */
+.containerFakeInput {
+  background: #fff;
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 88rpx;
+  border-top: 1px solid #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.containerFakeInput > text {
+  width: 375rpx;
+  height: 56rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #666;
+  margin-left: 30rpx;
+  margin-right: 100rpx;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  padding-left: 30rpx;
+  color: #bbb;
+}
+
+/* 输入短评 */
+.containerInput {
+  background: #fff;
+  z-index: 99;
+  color: #bbb;
+  font-size: 28rpx;
+  padding: 0  23rpx 40rpx 23rpx;
+  width: 704rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.containerInput > .header {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.containerInput > .inputTag {
+  width: 100%;
+  margin: 10rpx 0;
+  /* height: 100rpx; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.containerInput > input {
+  width: 661rpx;
+  height: 68rpx;
+  background: #f5f5f5;
+  line-height: 68rpx;
+  padding-left: 32rpx;
+  border-radius: 30rpx;
+}
+
+/* mask */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 77;
+  background: #333;
+  opacity: 0.5;
+}

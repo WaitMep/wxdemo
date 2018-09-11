@@ -1,0 +1,23 @@
+/* pages/book/book.wxss */
+.booksWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  padding-top: 108rpx;
+}
+.booksWrap > image {
+  width: 107rpx;
+  height: 32rpx;
+  margin: 40rpx 0 25rpx 0;
+  flex-wrap: wrap; 
+}
+/* bookItems */
+.booksItem {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 90rpx;
+  justify-content: space-between;
+  margin-top: 25rpx;
+}

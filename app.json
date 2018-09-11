@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/favour/favour",
+    "pages/book/book",
+    "pages/detail/detail",
+    "pages/loveDetail/loveDetail"
+  ],
+  "tabBar": {
+    "selectedColor": "#000",
+    "color": "#ccc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "流行",
+        "iconPath": "images/icon/classic.png",
+        "selectedIconPath": "images/icon/classic_hl.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "书单",
+        "iconPath": "images/icon/book.png",
+        "selectedIconPath": "images/icon/book_hl.png"
+      },
+      {
+        "pagePath": "pages/favour/favour",
+        "text": "喜欢",
+        "iconPath": "images/icon/favour.png",
+        "selectedIconPath": "images/icon/favour_hl.png"
+      }
+    ]
+  }
+}

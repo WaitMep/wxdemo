@@ -1,0 +1,22 @@
+<!--components/main/index.wxml-->
+<!-- 100电影 200音乐 300 句子 -->
+<view class="container">
+  <view class="post">
+    <view class="postContainer">
+      <image wx:if="{{datas.type == 200}}" src='{{datas.image}}' class='musicPostImg'></image>
+      <image wx:if='{{datas.type == 100}}' src='{{datas.image}}' class='postImg'></image>
+      <image wx:else src='{{datas.image}}' class='postImg'></image>
+      <!-- 播放与暂停音乐按钮 -->
+      <image wx:if='{{datas.classType == 200 }}' src='/images/playMusic.png' class='musicImg' bindtap='onPlay'></image>
+      <image wx:if='{{datas.classType == 200 && isPlayingMusic && index == idx}}' src='/images/pause.png' class='musicImg' bind:tap='onPause'></image>
+    </view>
+    <!-- 显示类型图片 -->
+    <image wx:if='{{datas.type == 200}}' src='/images/music.png' class='smallImg'></image>
+    <image wx:if='{{datas.type == 100}}' src='/images/movie.png' class='smallImg'></image>
+    <image wx:if='{{datas.type == 300}}' src='/images/poem.png' class='smallImg'></image>
+  </view>
+  <!-- discription -->
+  <view class='description'>
+    <text>{{datas.content}}</text>
+  </view>
+</view>

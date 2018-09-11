@@ -1,0 +1,16 @@
+/* components/button/index.wxss */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  margin-top: 66rpx; 
+  width: 558rpx;
+  height: 80rpx;
+  background: #f7f7f7;
+}
+.container > image {
+  width: 23rpx;
+  height: 34rpx;
+  padding: 23rpx 20rpx;
+}

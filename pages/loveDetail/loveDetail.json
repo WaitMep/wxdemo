@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "episode-cmp": "/components/episode/index",
+    "love-cmp": "/components/love/index",
+    "movie-cmp": "/components/classic/movie/index",
+    "music-cmp": "/components/classic/music/index",
+    "poem-cmp": "/components/classic/poem/index",
+    "button-cmp": "/components/button/index"
+  }
+}

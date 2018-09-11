@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+      "love-cmp": "/components/love/index",
+      "book-cmp": "/components/book/index",
+      "search-cmp": "/components/search/index"
+    }
+}

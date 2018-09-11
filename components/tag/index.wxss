@@ -1,0 +1,15 @@
+.container {
+  padding: 10rpx;
+  background: #f7f7f7;
+  margin: 5rpx;
+  border-radius: 10rpx;
+}
+
+.content {
+  color: #8a8a8a;
+}
+
+.num {
+  color: #bbb;
+  font-size: 18rpx;
+}

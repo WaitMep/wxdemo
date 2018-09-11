@@ -1,0 +1,83 @@
+<!--pages/detail/detail.wxml-->
+<wxs module="util">
+  var format = function(text) {
+    if (!text) {
+      return
+    }
+    regexp = getRegExp('\\\\n', 'g');
+    return text.replace(regexp, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+  }
+
+  var limit = function(array, num) {
+    array.splice(num, array.length-2)
+    return array
+  }
+  module.exports = {
+    format: format,
+    limit: limit
+  }
+</wxs>
+<wxs src="../../utils/filter.wxs" module="utils" />
+
+<view class="container">
+  <view class="bookMes">
+    <image src="{{book.image}}" />
+    <text class="title">{{book.title}}</text>
+    <text class="author">{{book.author[0]}}</text>
+  </view>
+  <view class="brief">
+    <text class="discription">短评</text>
+    <view class="comment ml">
+      <block wx:for="{{util.limit(comments, 10)}}" wx:for-item="comment" wx:key="id">
+        <tag-cmp class="tag" comment="{{comment}}" />
+      </block>
+    </view>
+  </view>
+
+  <view class="abstract">
+    <text class="discription">内容简介</text>
+    <text class="content ml" decode='{{true}}'>{{utils.format(book.summary)}}</text>
+  </view>
+  <view class="bookInfo">
+    <text class="discription">书本信息</text>
+    <view class="bookDetail ml">
+      <view>出版社
+        <text class="publisher">{{book.publisher}}</text>
+      </view>
+      <view>出版年
+        <text class="pubdate">{{book.pubdate}}</text>
+      </view>
+      <view>页数
+        <text class="pages">{{book.pages}}</text>
+      </view>
+      <view>定价
+        <text class="price">{{book.price}}</text>
+      </view>
+      <view>装帧
+        <text class="binding">{{book.binding}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="containerFakeInput" wx:if="{{!showInput}}">
+  <text bind:tap="posting">留下你的短评</text>
+  <love-cmp bind:like="onLike" count="{{count}}" love="{{love}}"/>
+</view>
+
+<view class="containerInput" wx:if="{{showInput}}" >
+  <view class="header">
+    <text>仅可点击标签+1</text>
+    <text bind:tap="cancel">取消</text>
+  </view>
+  <view class="inputTag">
+     <block wx:for="{{util.limit(comments, 3)}}" wx:for-item="comment" wx:key="id">
+        <tag-cmp comment="{{comment}}" bind:addComment="postComment" />
+      </block>
+  </view>
+  <input type="text" placeholder="短评不能超过12字" 
+  bindconfirm="postComment" value="{{value}}" />
+</view>
+
+<view class="mask" wx:if="{{showInput}}">
+</view>

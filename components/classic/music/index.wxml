@@ -1,0 +1,8 @@
+<view class='classic-container'>
+  <image src="{{image}}" class="img">
+    <image src="{{isPlaying?pauseImg:playImg}}" class="btn" bind:tap="onMusic"></image>
+  </image>
+  <image src="../images/music.png" class="tag"></image>
+  <text class="content">{{content}}</text>
+</view>
+

@@ -1,0 +1,28 @@
+/* components/search/index.wxss */
+.search {
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  border: 1rpx solid#f7f7f7;
+  padding: 20rpx 0;
+  position: fixed;
+  background: #fff;
+}
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 690rpx;
+  height: 68rpx;
+  border-radius: 30rpx;
+  background: #f7f7f7;
+  font-size: 28rpx;
+  color: #999;
+}
+.searchBar > image {
+  width: 28rpx;
+  height: 28rpx;
+}
+.search text {
+  padding-left: 10rpx; 
+}

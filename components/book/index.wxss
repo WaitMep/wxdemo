@@ -1,0 +1,40 @@
+/* components/book/index.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 5rpx 5rpx 5rpx #f4f4f4;
+  width: 241rpx;
+  color: #bbb;
+  font-size: 20rpx;
+  margin-bottom: 60rpx;
+}
+
+.container image {
+  width: 241rpx;
+  height: 361rpx;
+}
+
+.detailContainer {
+  background: #fff;
+  margin-top: -128rpx;
+}
+
+.authorAndTitle {
+  display: flex;
+  flex-direction: column;
+  padding: 19rpx 0 0 10rpx;
+}
+
+.title {
+  font-size: 24rpx;
+  color: #1f1f1f;
+  margin-bottom: 9rpx;
+}
+
+.count {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16rpx 15rpx 8rpx 0;
+}
