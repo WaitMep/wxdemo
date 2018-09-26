@@ -29,7 +29,9 @@
     <text class="discription">短评</text>
     <view class="comment ml">
       <block wx:for="{{util.limit(comments, 10)}}" wx:for-item="comment" wx:key="id">
-        <tag-cmp class="tag" comment="{{comment}}" />
+        <tag-cmp class="tag" content="{{comment.content}}">
+          <text class="num" slot="number">+{{comment.nums}}</text>
+        </tag-cmp>
       </block>
     </view>
   </view>
@@ -72,7 +74,9 @@
   </view>
   <view class="inputTag">
      <block wx:for="{{util.limit(comments, 3)}}" wx:for-item="comment" wx:key="id">
-        <tag-cmp comment="{{comment}}" bind:addComment="postComment" />
+        <tag-cmp content="{{comment.content}}" bind:onTap="postComment">
+          <text class="num" slot="number">+{{comment.nums}}</text>
+        </tag-cmp>
       </block>
   </view>
   <input type="text" placeholder="短评不能超过12字" 

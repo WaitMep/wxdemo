@@ -58,14 +58,21 @@
   margin-bottom: 30rpx;
 }
 
-.comment > .tag:nth-child(1){
-  background: #ffaddd;
+.comment > tag-cmp:nth-child(1) > view{
+  background: #fffbdd;
 }
 
-.comment > .tag:nth-child(2){
+.comment > tag-cmp:nth-child(2) > view{
   background: #eefaff;
 }
 
+.inputTag > tag-cmp:nth-child(1) > view{
+  background: #fffbdd;
+}
+
+.inputTag > tag-cmp:nth-child(2) > view{
+  background: #eefaff;
+}
 /* abstract */
 
 .abstract {
@@ -80,6 +87,11 @@
   line-height: 2em;
   margin-bottom: 30rpx;
   text-indent: 58rpx;
+}
+
+.num {
+  color: #bbb;
+  font-size: 18rpx;
 }
 
 /* bookInfo */

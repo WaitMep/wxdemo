@@ -1,14 +1,22 @@
 <!--pages/book/book.wxml-->
-<view class="bookList">
+<view wx:if="{{!searching}}">
   <view class="fixBox">
-    <search-cmp />
-  </view>
-  <view class="booksWrap">
-    <image src='/images/select.png' />
-    <view class="booksItem">
-      <block wx:key="" wx:for="{{books}}" wx:for-item="item">
-        <book-cmp book="{{item}}" />
-      </block>
+    <view class="searchBar" bind:tap="onSearch">
+      <image src="/images/search.png" />
+      <text>搜索书籍</text>
     </view>
   </view>
+  <view class="bookList">
+    <view class="booksWrap">
+      <image src='/images/select.png' />
+      <view class="booksItem">
+        <block wx:key="" wx:for="{{books}}" wx:for-item="item">
+          <book-cmp book="{{item}}" />
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <search-cmp bind:cancel="onCloseSearch" />
 </view>

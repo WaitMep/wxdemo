@@ -25,7 +25,7 @@ Page({
       console.log(data)
     })
     let timer = setTimeout(function() {
-      allFn('555555555555555')
+      allFn('json data')
       if(timer) {
         clearTimeout(timer)
       }

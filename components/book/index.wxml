@@ -3,11 +3,23 @@
   <image src="{{book.image}}" />
   <view class="detailContainer">
     <view class="authorAndTitle">
-      <text class="title">{{book.title}}</text>
-      <text class="author">{{book.author}}</text>
+      <text class="title">{{util.format(book.title)}}</text>
+      <text class="author">{{util.format(book.author[0])}}</text>
     </view>
     <view class="count">
       <text>{{book.favourNum}}喜欢</text>
     </view>
   </view>
 </view>
+<wxs module="util">
+  var format = function(data){
+    if(data){
+      var book = data.length >= 11 ? data.substring(0,11)+'...' : data
+      return book
+    }
+    return '' 
+  }
+  module.exports = {
+    format: format
+  }
+</wxs>

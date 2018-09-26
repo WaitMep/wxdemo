@@ -3,8 +3,11 @@ Component({
   /**
    * 组件的属性列表
    */
+  options:{
+    multipleSlots: true
+  },
   properties: {
-    comment:Object
+    content:String
   },
 
   /**
@@ -18,9 +21,9 @@ Component({
    */
   methods: {
     onTap(event) {
-      const content = this.properties.comment.content
+      const content = this.properties.content
 
-      this.triggerEvent('addComment', {
+      this.triggerEvent('onTap', {
         content: content
       }, {})
     }

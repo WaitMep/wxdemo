@@ -8,9 +8,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books: []
+    books: [],
+    searching:false,
   },
-
+  onSearch(event){
+    this._showSearch()
+  },
+  
+  onCloseSearch(){
+    this._closeSearch()
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -92,5 +100,18 @@ Page({
    */
   onShareAppMessage: function() {
 
-  }
+  },
+  /**
+   * 私有方法
+   */
+  _showSearch() {
+    this.setData({
+      searching: true
+    })
+  },
+  _closeSearch() {
+    this.setData({
+      searching: false
+    })
+  },
 })
