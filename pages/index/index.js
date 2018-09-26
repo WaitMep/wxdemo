@@ -14,6 +14,25 @@ Page({
     isFirst: 1
   },
   onLoad: function(options) {
+    // jsop与回调函数
+    var allFn
+    function jsop(callback) {
+      allFn = function (data) {
+        callback(data)
+      }
+    }
+    jsop(function(data) {
+      console.log(data)
+    })
+    let timer = setTimeout(function() {
+      allFn('555555555555555')
+      if(timer) {
+        clearTimeout(timer)
+      }
+    }, 2000)
+    
+
+    // 代码开始
     http.request({
       url: latestUrl
     }).then(res => {
