@@ -92,6 +92,8 @@
 .num {
   color: #bbb;
   font-size: 18rpx;
+  padding-left: 10rpx;
+  padding-top: 10rpx;
 }
 
 /* bookInfo */

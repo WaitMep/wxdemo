@@ -11,7 +11,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    more:{
+      type:String,
+      observer: '_loadMore'
+    }
   },
 
   /**
@@ -21,7 +24,10 @@ Component({
     searched: false,
     books: [],
     hotSearch: [],
-    historySearch: []
+    historySearch: [],
+    value: '',
+    hasMore: true,
+    loading: false
   },
 
   /**
@@ -29,7 +35,7 @@ Component({
    */
   methods: {
     onDelete() {
-      this._initBooks()
+      this._initData()
       this._showSearch()
       this._emptyInput()
       this._updataTag()
@@ -39,16 +45,19 @@ Component({
       if (q == false) {
         return
       }
-      this._searchBook(q).then(res => {
+      this._showResult()
+      wx.showLoading({
+        title: 'loading...',
+      })
+      this._searchBook(q, 1, 0).then(res => {
         this.setData({
           books: res.data.books,
           value: q
         })
-        if (res.data.books.length >= 1){
+        if (res.data.books.length){
           this._setStorage(q)
-          console.log('set')
         }
-        this._showResult()
+        wx.hideLoading()
       })
     },
     onCancel(event) {
@@ -57,6 +66,54 @@ Component({
     /**
      * 组件私有方法
      */
+    _lock(){
+      this.data.loading = true
+    },
+    _unlock(){
+      this.data.loading = false
+    },
+    _isLocking(){
+      return this.data.loading
+    },
+    _loadMore(){
+      if (this.data.searched && this.data.hasMore){
+        const length = this.data.books.length
+        if(this._isLocking()){
+          return
+        }
+
+        wx.showLoading({
+          title: 'loading...'
+        })
+
+        console.log('load more')
+        this._lock()
+        this._searchBook(this.data.value, 1, length).then(res => {
+          // 结果是为空
+          if (!res.data.books.length){
+            this.setData({
+              hasMore: false
+            })
+            this._unlock()
+            wx.hideLoading()
+            return
+          }
+
+          // 结果不为空
+          let tempArray = this.data.books
+          tempArray = tempArray.concat(res.data.books)
+          this.setData({
+            books: tempArray
+          })
+          this._unlock()
+          wx.hideLoading()
+        }, error => {
+          // 断网或出现错误时解锁
+          this._unlock()
+          wx.hideLoading()
+        })
+      }
+    },
     _updataTag(){
       this.setData({
         historySearch: wx.getStorageSync('q')
@@ -69,7 +126,6 @@ Component({
       }
       if (tempArray.length > 10) {
         tempArray.shift()
-        console.log('shift')
       }
       
       wx.setStorageSync('q', tempArray)
@@ -79,19 +135,20 @@ Component({
         searched: true
       })
     },
-    _searchBook(q) {
+    _searchBook(q, summary,start = 0) {
       return http.request({
         url: `${dataBase}/book/search`,
         data: {
-          start: 0,
-          summary: 1,
+          start: start,
+          summary: summary,
           q: q
         }
       })
     },
-    _initBooks() {
+    _initData() {
       this.setData({
-        books: []
+        books: [],
+        hasMore: true
       })
     },
     _showSearch() {

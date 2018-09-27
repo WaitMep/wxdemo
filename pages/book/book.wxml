@@ -18,5 +18,5 @@
   </view>
 </view>
 <view wx:else>
-  <search-cmp bind:cancel="onCloseSearch" />
+  <search-cmp more="{{more}}" bind:cancel="onCloseSearch" />
 </view>
