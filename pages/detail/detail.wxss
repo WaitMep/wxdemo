@@ -1,4 +1,9 @@
 /* pages/detail/detail.wxss */
+.share {
+  margin: 0 20rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
 
 .container {
   background: #f5f5f5;

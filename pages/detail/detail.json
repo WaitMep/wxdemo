@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "tag-cmp": "/components/tag/index",
-    "love-cmp": "/components/love/index"
+    "love-cmp": "/components/love/index",
+    "open-data-cmp": "/components/openButton/index"
   }
 }

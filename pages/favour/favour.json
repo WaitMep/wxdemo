@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "loveItem-cmp": "/components/loveItem/index"
+    "loveItem-cmp": "/components/loveItem/index",
+    "open-data-cmp": "/components/openButton/index"
   }
 }

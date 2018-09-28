@@ -9,7 +9,7 @@
   }
 
   var limit = function(array, num) {
-    array.splice(num, array.length-2)
+    array.splice(num, array.length - 2)
     return array
   }
   module.exports = {
@@ -64,23 +64,25 @@
 
 <view class="containerFakeInput" wx:if="{{!showInput}}">
   <text bind:tap="posting">留下你的短评</text>
-  <love-cmp bind:like="onLike" count="{{count}}" love="{{love}}"/>
+  <love-cmp bind:like="onLike" count="{{count}}" love="{{love}}" />
+  <open-data-cmp open-type="share" plain="true">
+    <image slot="inner" src="/images/share.png" class="share" />
+  </open-data-cmp>
 </view>
 
-<view class="containerInput" wx:if="{{showInput}}" >
+<view class="containerInput" wx:if="{{showInput}}">
   <view class="header">
     <text>仅可点击标签+1</text>
     <text bind:tap="cancel">取消</text>
   </view>
   <view class="inputTag">
-     <block wx:for="{{util.limit(comments, 3)}}" wx:for-item="comment" wx:key="id">
-        <tag-cmp content="{{comment.content}}" bind:onTap="postComment">
-          <text class="num" slot="number">+{{comment.nums}}</text>
-        </tag-cmp>
-      </block>
+    <block wx:for="{{util.limit(comments, 3)}}" wx:for-item="comment" wx:key="id">
+      <tag-cmp content="{{comment.content}}" bind:onTap="postComment">
+        <text class="num" slot="number">+{{comment.nums}}</text>
+      </tag-cmp>
+    </block>
   </view>
-  <input type="text" placeholder="短评不能超过12字" 
-  bindconfirm="postComment" value="{{value}}" />
+  <input type="text" placeholder="短评不能超过12字" bindconfirm="postComment" value="{{value}}" />
 </view>
 
 <view class="mask" wx:if="{{showInput}}">

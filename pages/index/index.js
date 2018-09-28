@@ -5,7 +5,7 @@ import {
   dataBase
 } from '../../config.js'
 const http = new PromiseHttp()
-const latestUrl = dataBase + '/classic/latest';
+const latestUrl = dataBase + '/classic/latest'
 
 Page({
   data: {
@@ -16,8 +16,9 @@ Page({
   onLoad: function(options) {
     // jsop与回调函数
     var allFn
+
     function jsop(callback) {
-      allFn = function (data) {
+      allFn = function(data) {
         callback(data)
       }
     }
@@ -26,11 +27,11 @@ Page({
     })
     let timer = setTimeout(function() {
       allFn('json data')
-      if(timer) {
+      if (timer) {
         clearTimeout(timer)
       }
     }, 2000)
-    
+
 
     // 代码开始
     http.request({
@@ -48,7 +49,7 @@ Page({
   },
   onShow: function() {
     const storageData = wx.getStorageSync(`${this.data.classic.index}`)
-    
+
     // 读取缓存
     if (storageData) {
       this.setData({
@@ -57,12 +58,6 @@ Page({
     }
   },
   onLike: function(event) {
-    const storageData = wx.getStorageSync(`${this.data.classic.index}`)
-    if (storageData) {
-      const likeStatus = !storageData.like_status
-      storageData['like_status'] = likeStatus
-      wx.setStorageSync(`${this.data.classic.index}`, storageData)
-    }
     //点赞与取消点赞，并更新对应缓存
     const state = event.detail.state === 'like' ? '/like' : '/like/cancel'
     http.request({
@@ -79,6 +74,13 @@ Page({
     }).then(res => {
       // 更改喜欢页面的喜欢期刊缓存
       wx.setStorageSync('favor', res.data)
+      // 点赞或取消点赞成功后才更新缓存
+      const storageData = wx.getStorageSync(`${this.data.classic.index}`)
+      if (storageData) {
+        const likeStatus = !storageData.like_status
+        storageData['like_status'] = likeStatus
+        wx.setStorageSync(`${this.data.classic.index}`, storageData)
+      }
     })
   },
   onChange: function(event) {

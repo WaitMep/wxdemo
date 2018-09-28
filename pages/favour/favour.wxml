@@ -3,8 +3,17 @@
   <view class="header">
     <image src="/images/like-bg.png" />
     <view class='avatar'>
-      <image />
-      <text>Ming</text>
+      <open-data-cmp 
+        wx:if="{{!authorized}}" open-type="getUserInfo" 
+        plain="true" bind:getuserinfo="onGetUserInfo">
+        <text slot="inner" class="click">
+          <text>click me</text>
+        </text>
+      </open-data-cmp>
+      <view wx:else>
+        <image class="userImg" src="{{userImg}}"/>
+        <view class="userNickname">{{userNickname}}</view>
+      </view>
     </view>
     <view class="aboutAndLove">
       <view class="about">
@@ -12,7 +21,7 @@
         <text>关于我们</text>
       </view>
       <view class="love">
-        <view class="loveCount">{{count}}</view>
+        <view class="loveCount">{{favourBookCount}}</view>
         <text>喜欢的书</text>
       </view>
     </view>

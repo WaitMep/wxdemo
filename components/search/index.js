@@ -42,7 +42,7 @@ Component({
     },
     onConfirm(event) {
       const q = event.detail.value || event.detail.content
-      if (q == false) {
+      if (q == false || typeof q === 'undefined') {
         return
       }
       this._showResult()

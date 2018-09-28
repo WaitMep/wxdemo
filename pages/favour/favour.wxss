@@ -29,16 +29,30 @@
   text-align: center;
 }
 
-.avatar image {
-  width: 121rpx;
-  height: 121rpx;
+.avatar .userImg {
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
-  background: #000;
+  overflow: hidden;
 }
 
-.avatar text {
-  font-size: 34rpx;
-  line-height: 1em;
+.click {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120rpx;
+  height: 120rpx;
+  background: #f7f7f7;
+  line-height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+.avatar .userNicknaem {
+  font-size: 32rpx;
   margin-top: 14rpx;
 }
 

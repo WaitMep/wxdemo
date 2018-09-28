@@ -9,6 +9,7 @@
   color: #bbb;
   font-size: 20rpx;
   margin-bottom: 60rpx;
+  position: relative;
 }
 
 .container image {
@@ -18,7 +19,10 @@
 
 .detailContainer {
   background: #fff;
-  margin-top: -128rpx;
+  width: 241rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .authorAndTitle {

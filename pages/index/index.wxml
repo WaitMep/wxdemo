@@ -4,18 +4,20 @@
 <view class="container">
   <view class="header">
     <episode-cmp index="{{classic.index}}" />
-    <love-cmp bind:like="onLike" count="{{classic.fav_nums}}" love="{{classic.like_status}}" />
+    <view class="right">
+      <love-cmp bind:like="onLike" count="{{classic.fav_nums}}" love="{{classic.like_status}}" />
+      <open-data-cmp open-type="share" plain="true">
+        <image slot="inner" src="/images/share.png" class="share" />
+      </open-data-cmp>
+    </view>
+
   </view>
   <!-- 期刊组件 -->
-  <movie-cmp wx:if="{{classic.type===100}}" 
-  image="{{classic.image}}" content="{{classic.content}}" />
+  <movie-cmp wx:if="{{classic.type===100}}" image="{{classic.image}}" content="{{classic.content}}" />
 
-  <music-cmp wx:if="{{classic.type===200}}"
-  image="{{classic.image}}" content="{{classic.content}}" 
-  src="{{classic.url}}" />
+  <music-cmp wx:if="{{classic.type===200}}" image="{{classic.image}}" content="{{classic.content}}" src="{{classic.url}}" />
 
-  <poem-cmp wx:if="{{classic.type===300}}"
-  image="{{classic.image}}" content="{{classic.content}}" />
+  <poem-cmp wx:if="{{classic.type===300}}" image="{{classic.image}}" content="{{classic.content}}" />
 
   <button-cmp bind:change="onChange" title="{{classic.title}}" />
 </view>

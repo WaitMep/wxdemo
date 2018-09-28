@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "love-cmp": "/components/love/index",
+    "open-data-cmp": "/components/openButton/index",
     "button-cmp": "/components/button/index",
     "movie-cmp": "/components/classic/movie/index",
     "music-cmp": "/components/classic/music/index",
