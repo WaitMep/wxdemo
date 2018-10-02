@@ -10,8 +10,8 @@ const latestUrl = dataBase + '/classic/latest'
 Page({
   data: {
     classic: {},
-    isLatest: 0,
-    isFirst: 1
+    isLatest: 0, // 在获取最新一期是根据当前的index更新
+    isFirst: 1 // 首页固定index = 1
   },
   onLoad: function(options) {
     // jsop与回调函数

@@ -1,7 +1,7 @@
 <view class="container" bind:tap="onLoveItem">
   <view class="header">
     <text>{{util.format(type)}}</text>
-    <love-cmp count="{{item.fav_nums}}" love="{{item.like_status}}" />
+    <love-cmp readOnly="true" count="{{item.fav_nums}}" love="{{item.like_status}}" />
   </view>
   <!-- type为100是电影 200是音乐 300是电影 -->
   <view class="main">

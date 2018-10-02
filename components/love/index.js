@@ -8,6 +8,9 @@ Component({
     count: {
       type: Number,
       value: 0,
+    },
+    readOnly: {
+      type: Boolean
     }
   },
   data: {
@@ -16,6 +19,9 @@ Component({
   },
   methods: {
     onLove: function() {
+      if(this.properties.readOnly) {
+        return
+      }
       const love = this.properties.love;
       let count = this.properties.count;
 

@@ -28,6 +28,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.showLoading({
+      title: 'loading...',
+    })
     http.request({
       url: `${dataBase}/book/hot_list`
     }).then(res => {
@@ -49,6 +52,9 @@ Page({
       this.setData({
         books: books
       })
+      wx.hideLoading()
+    }, err => {
+      wx.hideLoading()
     })
   },
 

@@ -12,9 +12,9 @@ Page({
     comments: [],
     showInput: false,
     bid: 0,
-    value: '',
     love: false,
-    count: 0
+    count: 0,
+    focus: true
   },
   onLoad(options) {
     const id = options.id
@@ -74,7 +74,7 @@ Page({
         icon: 'none'
       })
       this.setData({
-        value: ''
+        focus: true
       })
       return
     }

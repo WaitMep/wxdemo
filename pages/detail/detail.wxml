@@ -82,7 +82,7 @@
       </tag-cmp>
     </block>
   </view>
-  <input type="text" placeholder="短评不能超过12字" bindconfirm="postComment" value="{{value}}" />
+  <input focus="{{focus}}" type="text" placeholder="短评不能超过12字" bindconfirm="postComment" value="{{value}}" />
 </view>
 
 <view class="mask" wx:if="{{showInput}}">
